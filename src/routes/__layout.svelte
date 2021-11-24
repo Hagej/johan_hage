@@ -15,22 +15,33 @@
 
 <style>
 	main {
+		grid-area: "main";
 		flex: 1;
 		display: flex;
 		flex-direction: column;
 		padding: 1rem;
-		width: 100%;
 		max-width: 1024px;
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
 
+	:global(#svelte) {
+		display: grid;
+		grid-template-columns: 18em 1fr;
+		grid-template-rows: 3fr 1fr;
+		grid-template-areas:
+			'header main'
+			'footer main';
+	}
+
 	footer {
+		grid-area: footer;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		padding: 40px;
+		background: var(--tertiary-color)
 	}
 
 	footer a {
