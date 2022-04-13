@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Header from '$lib/header/Header.svelte';
+	import Header from '$lib/header/header.svelte';
 	import '../app.css';
 </script>
 
@@ -15,7 +15,7 @@
 
 <style>
 	main {
-		grid-area: "main";
+		grid-area: 'main';
 		flex: 1;
 		display: flex;
 		flex-direction: column;
@@ -41,7 +41,7 @@
 		justify-content: center;
 		align-items: center;
 		padding: 40px;
-		background: var(--tertiary-color)
+		background: var(--tertiary-color);
 	}
 
 	footer a {
