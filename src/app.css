@@ -4,21 +4,31 @@
 	font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	--font-mono: 'Fira Mono', monospace;
 	--pure-white: #ffffff;
-	--foreground: #f8f8f2;
+	--foreground: #a0abb8;
+	--primary-color: #1b2026;
 
-	--primary-color: #282a36;
-	--secondary-color: #44475a;
-	--tertiary-color: #383a59;
-	--accent-color: #ff5555;
-	--cyan: #8be9fd;
-	--green: #50fa7b;
-	--orange: #ffb86c;
-	--pink: #ff79c6;
-	--purple: #bd93f9;
-	--red: #ff5555;
-	--yellow: #f1fa8c;
+	--charcoal: #37404a;
+	--charcoal-dark: #2b323b;
+	--charcoal-light: #576575;
+
+	--gunmetal: #142d3d;
+	--gunmetal-dark: #102531;
+	--gunmetal-light: #295e7e;
+
+	--red: #8c4046;
+	--red-dark: #703338;
+	--red-light: #b2575f;
+
+	--yellow: #c39b5b;
+	--yellow-dark: #a77f3e;
+	--yellow-light: #cfaf7c;
+
+	--green: #6a7656;
+	--green-dark: #555f45;
+	--green-light: #899871;
+
 	--heading-color: rgba(0, 0, 0, 0.7);
-	--text-color: #f8f8f2;
+	--text-color: #a0abb8;
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
 }
