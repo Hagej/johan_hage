@@ -1,59 +1,67 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import Github from '../../icons/github.svelte';
+	import { page } from '$app/stores'
 	const menuItems: [text: string, link: string][] = [
 		['Home', '/'],
 		['About', '/about'],
 		['Projects', '/projects'],
 		['Skills', '/skills']
-	];
+	]
 </script>
 
 <header>
 	<div class="top">
-		<a href="/">
-			<!-- Insert logo! -->
-			Johan Hage
-		</a>
+		<a href="/"> JH </a>
 	</div>
-
+	<!--
 	<div class="socials">
-		<!-- Github -->
 		<a href="https://github.com/Hagej/johan_hage">
 			<Github />
 		</a>
-	</div>
+	</div> -->
 
-	<nav>
+	{#each menuItems as [text, link]}
+		<a class:active={$page.url.pathname === link} sveltekit:prefetch href={link}>{text}</a>
+	{/each}
+
+	<!-- 
 		<ul>
-			{#each menuItems as [text, link]}
-				<li class:active={$page.url.pathname === link}>
-					<a class:active={$page.url.pathname === link} sveltekit:prefetch href={link}>{text}</a>
+			<li class:active={$page.url.pathname === link}>
+			
 				</li>
-			{/each}
 		</ul>
-	</nav>
+	 -->
 </header>
 
 <style lang="scss">
 	header {
-		grid-area: header;
+		position: fixed;
+		top: -295px;
+		left: -200px;
+		width: 250px;
+		height: 400px;
+		transform: rotate(50deg);
 		display: flex;
-		align-items: center;
-		padding: 3em 0;
-		justify-content: space-between;
-		gap: 20px;
+		padding: 100px 20px 100px 200px;
+		gap: 50px;
 		flex-direction: column;
-		background: var(--secondary-color);
+		align-items: end;
+		background: red;
+		z-index: 1;
+		> * {
+			transform: rotate(-50deg);
+		}
 	}
 	.top {
-		width: 100%;
+		position: absolute;
+		left: 20px;
+		top: 10px;
+		z-index: 1;
 		height: 5em;
 		a {
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			font-size: 3em;
+			font-size: 4em;
 			width: 100%;
 			height: 100%;
 			&:hover {
@@ -72,38 +80,23 @@
 		}
 	}
 
-	nav {
-		flex: 1;
-		justify-content: center;
-		a {
-			display: flex;
-			height: 100%;
-			align-items: center;
-			padding: 0 1em;
-			color: var(--heading-color);
-			font-weight: 700;
-			font-size: 0.8rem;
-			text-transform: uppercase;
-			letter-spacing: 0.1em;
-			text-decoration: none;
-			transition: color 0.2s linear;
-			&.active {
-				color: var(--accent-color);
-			}
-			&:hover {
-				color: var(--accent-color);
-			}
-		}
-	}
-	ul {
-		padding: 0;
-		margin: 0;
+	a {
 		display: flex;
-		flex-direction: column;
+
 		align-items: center;
-		list-style: none;
-	}
-	li {
-		height: 100%;
+
+		color: var(--heading-color);
+		font-weight: 700;
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		text-decoration: none;
+		transition: color 0.2s linear;
+		&.active {
+			color: var(--accent-color);
+		}
+		&:hover {
+			color: var(--accent-color);
+		}
 	}
 </style>
