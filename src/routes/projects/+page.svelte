@@ -1,21 +1,7 @@
 <script lang="ts">
-	import { collection, onSnapshot } from 'firebase/firestore'
-	import { db } from '../../src/firebase'
+	import type { Project } from 'src/types'
 
-	let projects: any[] = []
-	const unsub = onSnapshot(
-		collection(db, 'projects'),
-		(querySnapshot) => {
-			projects = querySnapshot.docs.map((doc) => ({
-				...doc.data(),
-				id: doc.id
-			}))
-			console.log('Projects: ', projects)
-		},
-		(err) => {
-			console.error(err)
-		}
-	)
+	export let projects: Project[]
 </script>
 
 <section>
