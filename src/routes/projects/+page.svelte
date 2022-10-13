@@ -1,7 +1,8 @@
 <script lang="ts">
-	import type { Project } from 'src/types'
+	import type { PageData } from './$types'
 
-	export let projects: Project[]
+	export let data: PageData
+	const { projects } = data
 </script>
 
 <section>
